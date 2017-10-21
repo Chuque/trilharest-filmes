@@ -1,1 +1,8 @@
 language: java
+deploy:
+  api-key:
+    secure: mQ+EbMwqIZikPmi3d2YRo4qiMewC5Dcbpsj8Zd8I8n52YWhYRZ2j/J+gpW8Cd15PqgfWQ9M+Nl+rIQ9vEtE6trVJQmhsbJ/b+4WTMAvYagE5lQBD7tSVYXTCC3PIa+rzdu4ystFXh+AS61VlznXv/hvD2FdvjxmHRJvV0F1F2ZsXhDOY9c20PUBFlqNYHoRL+hG17QicSzPTGocq5eDssgBzJUpvWRp4y/QGLkw9+Es720sffGqhUBepK9YDtmP2F6mYIV7CSm/mB870c1weviwSbS9l3OiFrkpHe2KqZ3mpZq0s9bf30lFdOtWs/X24ApPRXzqApGK/gQ9hONlpu1M+x7Y2Bk+v70LbHtOgbChlHVfJ546GG4SeG+yFjYRg/I8G1RuFpgo/Ekk0Ad7oyRnt/EmeFlTTJ+0HY0gUwkgeNSvQHWHsyyMME/CGmkVTVD/Jo3WKF7CSVtdk2vBZx2pRmoc6CQy9ktLPXzg98NmD1CBV+VD62dK572xPskHuB/2GJzzgKe5VhgXC6j/I5yUjA2Obfb/MXZtPCJXc10rUjwhAmxf3yWm2lZejPILbvJqjQKBLRKxxhlBSwfijv8kMEuXv7xYcnvIzczJMeoWidmXklqkct4ta8mii78zuT8z+EwtqG2gMXG45sTLMAE/yFzkHOwkNRVHgAP6SbS8=
+  provider: heroku
+  app:
+    staging: chuque-filmes-staging
+    master: chuque-filmes-prod
