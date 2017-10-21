@@ -6,6 +6,7 @@ import com.opensanca.trilharest.filmes.comum.ParametrosDePaginacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @RestController
@@ -27,7 +28,8 @@ public class FilmesAPI {
         if(parametrosDePaginacao == null){
             parametrosDePaginacao = new ParametrosDePaginacao();
         }
-        return this.filmesRepository.buscarPaginaEmExibicao(parametrosDePaginacao);
+        LocalDate hoje = LocalDate.now();
+        return this.filmesRepository.buscarPaginaEmExibicao(parametrosDePaginacao, hoje);
     }
 
     //isso é outra action do caminho /filmes

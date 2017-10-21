@@ -14,8 +14,8 @@ public class Filme {
     private LocalDate fimExibicao;
 
     //classes que nao tem um construtor sem parametros impede a serialização de um objeto
-    public Filme() {
-    }
+    /*public Filme() {
+    }*/
 
     public Filme(UUID id, String nome, String sinopse, Duration duracao, LocalDate inicioExibicao, LocalDate fimExibicao) {
         this.id = id;
@@ -74,7 +74,15 @@ public class Filme {
         this.fimExibicao = fimExibicao;
     }
 
-    public boolean emExibicao() {
-        return false;
+    public boolean emExibicao(LocalDate referencia) {
+        if(getInicioExibicao() == null || getFimExibicao() == null){
+            return false;
+        }
+        LocalDate hoje = LocalDate.now();
+        LocalDate inicio = getInicioExibicao();
+        LocalDate fim = getFimExibicao();
+        boolean hojeDepoisDoInicio = inicio.isEqual(referencia) || inicio.isBefore(referencia);
+        boolean hojeAntesDoInicio = fim.isEqual(referencia) || fim.isAfter(referencia);
+        return hojeDepoisDoInicio && hojeAntesDoInicio;
     }
 }

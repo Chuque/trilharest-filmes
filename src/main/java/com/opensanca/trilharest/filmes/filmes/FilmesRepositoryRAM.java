@@ -32,10 +32,10 @@ public class FilmesRepositoryRAM implements FilmesRepository {
     );
 
     @Override
-    public Pagina<Filme> buscarPaginaEmExibicao(ParametrosDePaginacao parametrosDePaginacao) {
+    public Pagina<Filme> buscarPaginaEmExibicao(ParametrosDePaginacao parametrosDePaginacao, LocalDate referencia) {
 
         List<Filme> emExibicao = registros.stream()
-                .filter(filme -> filme.emExibicao())
+                .filter(filme -> filme.emExibicao(referencia))
                 .collect(Collectors.toList());
 
         /*
