@@ -13,7 +13,7 @@ public class Filme {
     private LocalDate inicioExibicao;
     private LocalDate fimExibicao;
 
-    //classes que nao tem um construtor sem parametros...(não lembro o que acontece)
+    //classes que nao tem um construtor sem parametros impede a serialização de um objeto
     public Filme() {
     }
 
@@ -72,5 +72,9 @@ public class Filme {
 
     public void setFimExibicao(LocalDate fimExibicao) {
         this.fimExibicao = fimExibicao;
+    }
+
+    public boolean emExibicao() {
+        return false;
     }
 }

@@ -9,6 +9,9 @@ public interface FilmesRepository {
 
     Pagina<Filme> buscarPaginaEmExibicao(ParametrosDePaginacao parametrosDePaginacao);
 
+    /*
+    Colocar aqui o javadoc do método
+     */
     Filme buscarPorId(UUID id);
 
 }
